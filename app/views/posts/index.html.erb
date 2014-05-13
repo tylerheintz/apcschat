@@ -1,0 +1,36 @@
+<h1>Mr B's Chat Thing...in 20 minutes</h1>
+
+<%= link_to :root do %>
+
+<img style="height:5em;width:5em" src="http://www.keybridgecommunications.com/wp-content/uploads/2012/11/Button-Refresh.png">
+
+<% end %>
+
+<div style="float:right;float:top">
+
+<%= render 'form' %>
+
+</div>
+
+<div id="divy">
+
+	<% @posts.each do |post|%>
+	
+	<strong> <%= post.username %> </strong>
+	
+	<p id="<%post.id%>" style="word-wrap:normal;margin-top:0em;margin-bottom:0em" > <%= post.content%> </p>
+	
+	<span style="color:orange" > <%= time_ago_in_words(post.created_at) %> ago </span>
+	
+		<% 2.times do%>
+			</br>
+		<%end%>
+	
+	<%end%>
+
+</div>
+
+<br>
+
+
+
